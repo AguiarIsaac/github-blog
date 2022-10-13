@@ -1,5 +1,15 @@
+import { ThemeProvider } from "styled-components";
+import { Header } from "./components/Header";
+import { DefaultLayout } from "./layouts/DefaultLayout";
+import { GlobalStyle } from "./styles/globalstyle";
+import Default from "./styles/themes/Default";
+
 export function App() {
   return (
-    <h1>Github BLog</h1>
+    <ThemeProvider theme={ Default }>
+      <Header />
+      <DefaultLayout />
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
