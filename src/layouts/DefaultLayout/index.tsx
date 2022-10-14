@@ -1,4 +1,4 @@
-import { Container, Profile } from "./styles";
+import { Container, Profile, SearchForm } from "./styles";
 import git from "../../assets/Type=github-brands.svg";
 import corp from "../../assets/corp.svg";
 import personas from "../../assets/personas.svg";
@@ -31,6 +31,15 @@ export function DefaultLayout() {
                     </div>
                 </div>
             </Profile>
+            
+            <SearchForm>
+                <div className="titleForm">
+                    <h5>Publicações</h5>
+                    <span>6 publicações</span>
+                </div>
+
+                <input type="text" placeholder="Buscar Conteúdo"/>
+            </SearchForm>
         </Container>
     )
 }
