@@ -10,6 +10,14 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Nunito', sans-serif;
+    color: ${props => props.theme.colors.baseText};
     background: ${props => props.theme.colors.baseBackground};
+  }
+
+  a {
+    color: ${props => props.theme.colors.blue};
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
   }
 `
