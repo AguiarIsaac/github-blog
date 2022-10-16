@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   max-width: 864px;
+  width: 90%;
   margin: 0 auto;
   margin-top: -75px;
   
@@ -112,4 +113,11 @@ export const SearchForm = styled.form`
       border: 1px solid ${props => props.theme.colors.blue};
     }
   }
+`
+
+export const PostsComponent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
 `

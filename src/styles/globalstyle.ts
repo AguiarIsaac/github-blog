@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: ${props => props.theme.colors.blue};
     text-decoration: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 12px;
+    font-family: 'Nunito', sans-serif;
   }
 `

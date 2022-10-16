@@ -1,8 +1,10 @@
-import { Container, Profile, SearchForm } from "./styles";
+import { Container, PostsComponent, Profile, SearchForm } from "./styles";
 import git from "../../assets/Type=github-brands.svg";
 import corp from "../../assets/corp.svg";
 import personas from "../../assets/personas.svg";
 import up from "../../assets/up.svg";
+import { Post } from "../../components/Post";
+
 
 export function DefaultLayout() {
     return (
@@ -40,6 +42,13 @@ export function DefaultLayout() {
 
                 <input type="text" placeholder="Buscar Conteúdo"/>
             </SearchForm>
+
+            <PostsComponent>
+               <Post />
+               <Post /> 
+               <Post /> 
+               <Post /> 
+            </PostsComponent>
         </Container>
     )
 }
