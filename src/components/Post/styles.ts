@@ -1,12 +1,31 @@
 import styled from "styled-components";
 
-export const PostComponent = styled.div`
+export const PostComponent = styled.a`
     background: ${props => props.theme.colors.basePost};
     max-width: 26rem;
     max-height: 16.25rem;
     padding: 2rem;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -1px;
+      border-radius: inherit;
+      transition: 0.8s;
+    }
+
+    &:hover::after {
+      background: ${props => props.theme.colors.baseLabel};
+    }
     
     .title {
         display: flex;

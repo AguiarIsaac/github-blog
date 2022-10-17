@@ -45,6 +45,21 @@ export const Profile = styled.div`
         align-items: center;
         gap: 0.5rem;
         font-weight: bold;
+        text-transform: uppercase;
+        position:relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          transition: 0.8s;
+        }
+
+        &:hover::after {
+          background: ${props => props.theme.colors.blue};
+        }
         
         img {
             width: 0.6rem;   
