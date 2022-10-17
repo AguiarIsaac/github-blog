@@ -2,7 +2,7 @@ import { PostComponent } from "./styles";
 
 export function Post() {
     return (
-        <PostComponent>
+        <PostComponent to="/q">
             <div className="title">
                 <h5>JavaScript data types and data structures</h5>
                 <span>Há 1 dia</span>

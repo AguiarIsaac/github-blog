@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-export const PostComponent = styled.a`
+export const PostComponent = styled(NavLink)`
     background: ${props => props.theme.colors.basePost};
     max-width: 26rem;
     max-height: 16.25rem;
