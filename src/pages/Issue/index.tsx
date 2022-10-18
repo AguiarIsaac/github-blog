@@ -7,8 +7,14 @@ import git from "../../assets/Type=github-brands.svg";
 import calendar from "../../assets/calendar.svg";
 import commit from "../../assets/commit.svg";
 import rehypeRaw from 'rehype-raw';
+import { useContext } from "react";
+import { SearchFormContext } from "../../contexts/SearchFormContext";
 
 export function Issue() {
+    const data = useContext(SearchFormContext)
+    const post = data.postlist
+
+    console.log(post[0].body)
     return (
         <>
             <PostInfo>
@@ -35,7 +41,7 @@ export function Issue() {
 
             <PostContent>
                 <ReactMarkdown>
-                    # Hello World
+                    {post[0].body}
                 </ReactMarkdown>
             </PostContent>
         </>

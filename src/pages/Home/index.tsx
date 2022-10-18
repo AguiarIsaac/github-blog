@@ -5,31 +5,32 @@ import personas from "../../assets/personas.svg";
 import up from "../../assets/up.svg";
 import { Post } from "../../components/Post";
 import { SearchForm } from "./components/SearchForm";
+import { useContext } from "react";
+import { SearchFormContext } from "../../contexts/SearchFormContext";
 
 export function Home() {
+    const data = useContext(SearchFormContext)
+    const profile = data.profile
+
     return (
         <>
           <Profile>
                 <div className="avatar">
-                    <img src="https://avatars.githubusercontent.com/u/37755163?v=4" alt="foto de perfil" />
+                    <img src={profile.avatar_url} alt="foto de perfil" />
                 </div>
 
                 <div className="description">
                     <div className="title">
-                        <h4>Isaac Aguiar</h4>
-                        <a href="#">Github <img src={up}/></a>
+                        <h4>{profile.name}</h4>
+                        <a href={profile.html_url} target="_blanck">Github <img src={up}/></a>
                     </div>
 
-                    <p>
-                        Tristique volutpat pulvinar vel massa, pellentesque 
-                        egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. 
-                        Nunc, volutpat pulvinar vel mass.
-                    </p>
+                    <p>{profile.bio}</p>
 
                     <div className="moreInfos">
-                        <span><img src={git}/> <p>AguiarIsaac</p></span>
-                        <span><img src={corp}/> <p>Miranda Computação</p></span>
-                        <span><img src={personas}/> <p>6 seguidores</p></span>
+                        <span><img src={git}/> <p>{profile.login}</p></span>
+                        <span><img src={corp}/> <p>{profile.company}</p></span>
+                        <span><img src={personas}/> <p>{profile.folowers} seguidores</p></span>
                     </div>
                 </div>
             </Profile>
