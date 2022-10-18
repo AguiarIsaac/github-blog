@@ -1,9 +1,10 @@
-import { PostsComponent, Profile, SearchForm } from "./styles";
+import { PostsComponent, Profile } from "./styles";
 import git from "../../assets/Type=github-brands.svg";
 import corp from "../../assets/corp.svg";
 import personas from "../../assets/personas.svg";
 import up from "../../assets/up.svg";
 import { Post } from "../../components/Post";
+import { SearchForm } from "./components/SearchForm";
 
 export function Home() {
     return (
@@ -33,14 +34,7 @@ export function Home() {
                 </div>
             </Profile>
             
-            <SearchForm>
-                <div className="titleForm">
-                    <h5>Publicações</h5>
-                    <span>6 publicações</span>
-                </div>
-
-                <input type="text" placeholder="Buscar Conteúdo"/>
-            </SearchForm>
+            <SearchForm />
 
             <PostsComponent>
                <Post />
