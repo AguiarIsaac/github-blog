@@ -17,7 +17,7 @@ interface SearchFormConextProps {
     },
     postlist: {
         title: string,
-        body: string
+        url: string,
         html_url: string,
         login: string,
         created_at: string,
@@ -43,7 +43,7 @@ export function SearchFormContextProvider({children}: ContextProps) {
 
     const postlist = [{
         title: 'Centralizar elementos com CSS',
-        body: "# teste",
+        url: 'https://api.github.com/repos/aguiarisaac/github-blog/issues/1',
         html_url: 'https://github.com/AguiarIsaac/github-blog/issues/1',
         login: 'AguiarIsaac',
         created_at: '2022-10-14T18:58:22Z',

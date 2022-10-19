@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ReactMarkdown from 'react-markdown';
 
 export const PostInfo = styled.div`
   display: flex;
@@ -68,5 +69,22 @@ export const PostInfo = styled.div`
 `
 
 export const PostContent = styled.div`
- 
+  padding: 2rem;
+`
+
+export const MarkDown = styled(ReactMarkdown)`
+  
+  pre {
+    background: aliceblue;
+    color: blue;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    width: 50%;
+  }
+
+  img {
+    border-radius: 10px;
+    margin: 2rem 0;
+  }
 `

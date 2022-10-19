@@ -1,20 +1,25 @@
 import { NavLink } from "react-router-dom";
-import ReactMarkdown from 'react-markdown';
-import { PostContent, PostInfo } from "./styles";
+
+import remarkGfm from 'remark-gfm';
+import { MarkDown, PostContent, PostInfo } from "./styles";
 import arrow from "../../assets/arrow.svg";
 import up from "../../assets/up.svg";
 import git from "../../assets/Type=github-brands.svg";
 import calendar from "../../assets/calendar.svg";
 import commit from "../../assets/commit.svg";
-import rehypeRaw from 'rehype-raw';
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SearchFormContext } from "../../contexts/SearchFormContext";
+import axios from "axios";
 
 export function Issue() {
     const data = useContext(SearchFormContext)
-    const post = data.postlist
+    const Post = data.postlist[0]
+    const [bodyPost, setBodyPost] = useState('')
 
-    console.log(post[0].body)
+    useEffect(() => {
+        axios.get(Post.url).then(response => {setBodyPost(response.data.body)})
+    },[])
+
     return (
         <>
             <PostInfo>
@@ -40,9 +45,7 @@ export function Issue() {
             </PostInfo>
 
             <PostContent>
-                <ReactMarkdown>
-                    {post[0].body}
-                </ReactMarkdown>
+                <MarkDown children={bodyPost} remarkPlugins={[remarkGfm]} />
             </PostContent>
         </>
     )
