@@ -11,6 +11,8 @@ import { SearchFormContext } from "../../contexts/SearchFormContext";
 export function Home() {
     const data = useContext(SearchFormContext)
     const profile = data.profile
+    const posts = data.posts
+    console.log(posts)
 
     return (
         <>
@@ -30,7 +32,7 @@ export function Home() {
                     <div className="moreInfos">
                         <span><img src={git}/> <p>{profile.login}</p></span>
                         <span><img src={corp}/> <p>{profile.company}</p></span>
-                        <span><img src={personas}/> <p>{profile.folowers} seguidores</p></span>
+                        <span><img src={personas}/> <p>{profile.followers} seguidores</p></span>
                     </div>
                 </div>
             </Profile>
@@ -38,10 +40,7 @@ export function Home() {
             <SearchForm />
 
             <PostsComponent>
-               <Post />
-               <Post /> 
-               <Post /> 
-               <Post /> 
+                
             </PostsComponent>
         </>
     )

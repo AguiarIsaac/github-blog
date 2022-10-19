@@ -75,12 +75,12 @@ export const PostContent = styled.div`
 export const MarkDown = styled(ReactMarkdown)`
   
   pre {
-    background: aliceblue;
-    color: blue;
+    background: ${props => props.theme.colors.basePost};
+    color: ${props => props.theme.colors.baseText};
     border-radius: 10px;
     padding: 2rem 1rem;
     margin: 2rem 0;
-    width: 50%;
+    width: 100%;
   }
 
   img {

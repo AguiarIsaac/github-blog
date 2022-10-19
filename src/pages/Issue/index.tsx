@@ -7,19 +7,8 @@ import up from "../../assets/up.svg";
 import git from "../../assets/Type=github-brands.svg";
 import calendar from "../../assets/calendar.svg";
 import commit from "../../assets/commit.svg";
-import { useContext, useEffect, useState } from "react";
-import { SearchFormContext } from "../../contexts/SearchFormContext";
-import axios from "axios";
 
 export function Issue() {
-    const data = useContext(SearchFormContext)
-    const Post = data.postlist[0]
-    const [bodyPost, setBodyPost] = useState('')
-
-    useEffect(() => {
-        axios.get(Post.url).then(response => {setBodyPost(response.data.body)})
-    },[])
-
     return (
         <>
             <PostInfo>
@@ -45,7 +34,7 @@ export function Issue() {
             </PostInfo>
 
             <PostContent>
-                <MarkDown children={bodyPost} remarkPlugins={[remarkGfm]} />
+                {/* <MarkDown children={bodyPost} remarkPlugins={[remarkGfm]} /> */}
             </PostContent>
         </>
     )

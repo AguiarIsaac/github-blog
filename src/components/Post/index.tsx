@@ -1,5 +1,9 @@
 import { PostComponent } from "./styles";
 
+interface PostProps {
+    
+}
+
 export function Post() {
     return (
         <PostComponent to="/q">
