@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import ReactMarkdown from 'react-markdown';
 
-export const PostComponent = styled(NavLink)`
+export const PostComponent = styled.div`
     background: ${props => props.theme.colors.basePost};
     max-width: 26rem;
     max-height: 16.25rem;
@@ -9,6 +10,11 @@ export const PostComponent = styled(NavLink)`
     border-radius: 10px;
     cursor: pointer;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: space-between;
 
 
     &::after {
@@ -38,8 +44,10 @@ export const PostComponent = styled(NavLink)`
           width: 17rem;
         }
 
-        span {
-            color: ${props => props.theme.colors.baseSpan};
+        small {
+          color: ${props => props.theme.colors.baseSpan};
+          text-align: center;
+          font-size: 12px;
         }
     }
 
@@ -49,4 +57,22 @@ export const PostComponent = styled(NavLink)`
       color:${props => props.theme.colors.baseText};
       line-height: 160%;
     }
+`
+
+export const MarkDown = styled(ReactMarkdown)`
+
+  pre,
+  img,
+  h1,
+  h2,
+  h3,
+  h4,
+  a,
+  p {
+    display: none;
+  }
+
+  p:nth-child(1) {
+    display: initial;
+  }
 `

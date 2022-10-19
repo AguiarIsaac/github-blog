@@ -1,22 +1,41 @@
-import { PostComponent } from "./styles";
+import { Api } from "../../lib/axios";
+import { MarkDown, PostComponent } from "./styles";
+import remarkGfm from 'remark-gfm';
+import {  useEffect, useState } from "react";
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 interface PostProps {
-    
+    title: string
+    created_at: string
+    body: string
+    id: number
 }
 
-export function Post() {
+export function Post({title, created_at, body, id}: PostProps) {
+    
+    const [bodyPost, setBodyPost] = useState<any>()
+
+    useEffect(()=> {
+        Api.get(`repos/aguiarisaac/github-blog/issues/${id}`)
+        .then(response => {
+            setBodyPost(response.data.body)
+        })
+    },[])
+    
     return (
-        <PostComponent to="/q">
+        <PostComponent onClick={() => {console.log(id)}}>
             <div className="title">
-                <h5>JavaScript data types and data structures</h5>
-                <span>Há 1 dia</span>
+                <h5>{title}</h5>
+                <small>{formatDistanceToNow(new Date(created_at), {
+                    addSuffix: true,
+                    locale: ptBR
+                })}</small>
             </div>
 
-            <p>
-              Programming languages all have built-in data structures, but 
-              these often differ from one language to another. This article 
-              attempts to list the built-in data structures available in
-            </p>
+            <MarkDown children={bodyPost} remarkPlugins={[remarkGfm]} />
         </PostComponent>
     )
 }
+
+//to={`/${id}`}

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { SearchFormContext } from "../../../../contexts/SearchFormContext";
 import { SearchFormComponent } from "./styles";
 
 interface Input {
@@ -7,7 +8,8 @@ interface Input {
 }
 
 export function SearchForm() {
-
+    const data = useContext(SearchFormContext)
+    const quantityPosts = data.posts.length
     const [searchInput, setSearchInput] = useState('')
 
     const { register, handleSubmit} = useForm<Input>()
@@ -19,7 +21,7 @@ export function SearchForm() {
         <SearchFormComponent onChange={handleSubmit(SearchPost)}>
             <div className="titleForm">
                 <h5>Publicações</h5>
-                <span>6 publicações</span>
+                <span>{quantityPosts} publicações</span>
             </div>
 
             <input 

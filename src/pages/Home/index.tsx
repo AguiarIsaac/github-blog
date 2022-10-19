@@ -12,7 +12,6 @@ export function Home() {
     const data = useContext(SearchFormContext)
     const profile = data.profile
     const posts = data.posts
-    console.log(posts)
 
     return (
         <>
@@ -40,7 +39,17 @@ export function Home() {
             <SearchForm />
 
             <PostsComponent>
-                
+                {posts.map(post => {
+                    return (
+                        <Post
+                          key={post.number}
+                          title={post.title}
+                          created_at={post.created_at}
+                          body={post.url}
+                          id={post.number} 
+                        />
+                    )
+                })}
             </PostsComponent>
         </>
     )

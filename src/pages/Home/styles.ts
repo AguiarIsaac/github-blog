@@ -87,5 +87,5 @@ export const PostsComponent = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 3rem;
+  margin: 3rem 0;
 `
