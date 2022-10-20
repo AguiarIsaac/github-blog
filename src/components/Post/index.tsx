@@ -22,9 +22,9 @@ export function Post({title, created_at, body, id}: PostProps) {
             setBodyPost(response.data.body)
         })
     },[])
-    
+
     return (
-        <PostComponent onClick={() => {console.log(id)}}>
+        <PostComponent to={`post/${id}`}>
             <div className="title">
                 <h5>{title}</h5>
                 <small>{formatDistanceToNow(new Date(created_at), {

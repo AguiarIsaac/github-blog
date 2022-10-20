@@ -1,8 +1,8 @@
 import styled from "styled-components";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ReactMarkdown from 'react-markdown';
 
-export const PostComponent = styled.div`
+export const PostComponent = styled(NavLink)`
     background: ${props => props.theme.colors.basePost};
     max-width: 26rem;
     max-height: 16.25rem;
