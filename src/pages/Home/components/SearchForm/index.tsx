@@ -15,10 +15,9 @@ export function SearchForm() {
   const { register, handleSubmit } = useForm<Input>()
   const SearchPost: SubmitHandler<Input> = data => setSearchInput(data.search.replace(/ /g, '20%'))
 
-  console.log(searchInput)
-
+  data.HandletSearchPost(searchInput)
   return (
-    <SearchFormComponent onChange={handleSubmit(SearchPost)}>
+    <SearchFormComponent onSubmit={handleSubmit(SearchPost)}>
       <div className="titleForm">
         <h5>Publicações</h5>
         <span>{quantityPosts} publicações</span>

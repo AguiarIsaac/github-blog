@@ -88,4 +88,5 @@ export const PostsComponent = styled.div`
   flex-wrap: wrap;
   gap: 2rem;
   margin: 3rem 0;
+  justify-content: center;
 `
