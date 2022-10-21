@@ -7,7 +7,7 @@ import Default from "./styles/themes/Default";
 
 export function App() {
   return (
-    <ThemeProvider theme={ Default }>
+    <ThemeProvider theme={Default}>
       <SearchFormContextProvider>
         <BrowserRouter>
           <Router />

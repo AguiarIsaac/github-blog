@@ -9,48 +9,48 @@ import { useContext } from "react";
 import { SearchFormContext } from "../../contexts/SearchFormContext";
 
 export function Home() {
-    const data = useContext(SearchFormContext)
-    const profile = data.profile
-    const posts = data.posts
+  const data = useContext(SearchFormContext)
+  const profile = data.profile
+  const posts = data.posts
 
-    return (
-        <>
-          <Profile>
-                <div className="avatar">
-                    <img src={profile.avatar_url} alt="foto de perfil" />
-                </div>
+  return (
+    <>
+      <Profile>
+        <div className="avatar">
+          <img src={profile.avatar_url} alt="foto de perfil" />
+        </div>
 
-                <div className="description">
-                    <div className="title">
-                        <h4>{profile.name}</h4>
-                        <a href={profile.html_url} target="_blanck">Github <img src={up}/></a>
-                    </div>
+        <div className="description">
+          <div className="title">
+            <h4>{profile.name}</h4>
+            <a href={profile.html_url} target="_blanck">Github <img src={up} /></a>
+          </div>
 
-                    <p>{profile.bio}</p>
+          <p>{profile.bio}</p>
 
-                    <div className="moreInfos">
-                        <span><img src={git}/> <p>{profile.login}</p></span>
-                        <span><img src={corp}/> <p>{profile.company}</p></span>
-                        <span><img src={personas}/> <p>{profile.followers} seguidores</p></span>
-                    </div>
-                </div>
-            </Profile>
-            
-            <SearchForm />
+          <div className="moreInfos">
+            <span><img src={git} /> <p>{profile.login}</p></span>
+            <span><img src={corp} /> <p>{profile.company}</p></span>
+            <span><img src={personas} /> <p>{profile.followers} seguidores</p></span>
+          </div>
+        </div>
+      </Profile>
 
-            <PostsComponent>
-                {posts.map(post => {
-                    return (
-                        <Post
-                          key={post.number}
-                          title={post.title}
-                          created_at={post.created_at}
-                          body={post.url}
-                          id={post.number} 
-                        />
-                    )
-                })}
-            </PostsComponent>
-        </>
-    )
+      <SearchForm />
+
+      <PostsComponent>
+        {posts.map(post => {
+          return (
+            <Post
+              key={post.number}
+              title={post.title}
+              created_at={post.created_at}
+              body={post.url}
+              id={post.number}
+            />
+          )
+        })}
+      </PostsComponent>
+    </>
+  )
 }

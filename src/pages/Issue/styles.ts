@@ -21,33 +21,33 @@ export const PostInfo = styled.div`
     align-items: center;
 
     a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        position:relative;
-        
-        &::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          bottom: 0;
-          transition: 0.8s;
-        }
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      position:relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        transition: 0.8s;
+      }
 
-        &:hover::after {
-          background: ${props => props.theme.colors.blue};
-        }
-        
-        img {
-            width: 0.6rem;   
-        }
+      &:hover::after {
+        background: ${props => props.theme.colors.blue};
+      }
+      
+      img {
+          width: 0.6rem;   
+      }
 
-        #arrow {
-            width: 0.4rem;
-        }
+      #arrow {
+          width: 0.4rem;
+      }
       }
   }
 
@@ -86,5 +86,6 @@ export const MarkDown = styled(ReactMarkdown)`
   img {
     border-radius: 10px;
     margin: 2rem 0;
+    width: 100%;
   }
 `
