@@ -19,7 +19,7 @@ export const Profile = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 100%;
+    width: 75%;
     justify-content: space-between;
     
     .title {
