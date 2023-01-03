@@ -7,7 +7,7 @@ export const PostInfo = styled.div`
   justify-content: space-between;
   padding: 2rem 2rem 2rem 2.5rem;
   border-radius: 10px;
-  height: 10.5rem;
+  min-height: 10.5rem;
   background: ${props => props.theme.colors.baseProfile};
 
   h4 {
@@ -53,9 +53,10 @@ export const PostInfo = styled.div`
 
   .moreInfos {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.625rem;
-    /* margin-top: 1.9rem; */
+    margin-top: 1.9rem;
     img {
         width: 1rem;
     }
@@ -81,6 +82,8 @@ export const MarkDown = styled(ReactMarkdown)`
     padding: 2rem 1rem;
     margin: 2rem 0;
     width: 100%;
+    overflow: auto;
+    white-space: break-spaces;
   }
 
   img {

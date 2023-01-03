@@ -2,10 +2,11 @@ import styled from "styled-components"
 
 export const Profile = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem 2rem 2rem 2.5rem;
   border-radius: 10px;
-  max-height: 13.25rem;
+  /* max-height: 13.25rem; */
   background: ${props => props.theme.colors.baseProfile};
 
   .avatar img {
@@ -68,6 +69,7 @@ export const Profile = styled.div`
 
   .moreInfos {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.625rem;
     margin-top: 1.9rem;

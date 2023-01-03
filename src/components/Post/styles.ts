@@ -37,6 +37,7 @@ export const PostComponent = styled(NavLink)`
     .title {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         h5 {
           color: ${props => props.theme.colors.baseTitle};
           font-weight: bold;
